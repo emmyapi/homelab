@@ -76,12 +76,23 @@ sudo systemctl restart docker
 ```
 
 ```bash
-
+sudo nano /etc/docker/daemon.json
 ```
 
-```bash
-
+Paste this into the new file. If there’s already other stuff in the file, just add this runtimes block inside the top-level {}.
+```json
+{
+  "runtimes": {
+    "nvidia": {
+      "path": "nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  }
+}
 ```
+FYI: nano is an editor. ^ means your press CTRL. It took me an embarrisingly long time to figure out because ^ is usually SHIFT, right? 
+
+Save the file with CTRL+O followed by ENTER. Close the file with CTRL+X. 
 
 ```bash
 
