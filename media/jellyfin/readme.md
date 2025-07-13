@@ -43,33 +43,36 @@ sudo usermod -aG render your_username
 ```
 
 ### This is specific to a Nvidia GPU
+
 Check your OS and Version
 ```bash
 cat /etc/os-release
 ```
-
+As of writring this newer ubuntu versions are not supported by Nvidia so just use 22.04 if you have trouble
 ```bash
-
+distribution=ubuntu22.04
 ```
 
 ```bash
-
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
 ```
 
 ```bash
-
+curl -s -L https://nvidia.github.io/libnvidia-container/${distribution}/libnvidia-container.list | \
+  sed 's#deb #deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] #' | \
+  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
 ```bash
-
+sudo apt-get update
 ```
 
 ```bash
-
+sudo apt-get install -y nvidia-container-toolkit
 ```
 
 ```bash
-
+sudo systemctl restart docker
 ```
 
 ```bash
