@@ -2,7 +2,7 @@
 
 Step 1 is to follow this video https://www.youtube.com/watch?v=Vwtx_dfYrtA
 
-However, come here for commands. I'll explain when there are changes sue to using an Nvidia GPU. 
+However, come here for commands. I'll explain when there are changes due to using an Nvidia GPU. 
 
 In you preferred terminal
 
@@ -40,6 +40,32 @@ ll /dev/dri
 
 ```bash
 sudo usermod -aG render your_username
+```
+
+Make sure you are in the root
+```bash
+cd /
+```
+
+```bash
+sudo mkdir /data
+```
+
+```bash
+sudo mkdir /docker
+```
+
+```bash
+sudo chown -R 1000:1000 /data
+sudo chown -R 1000:1000 /docker
+```
+
+```bash
+
+```
+
+```bash
+
 ```
 
 ### This is specific to a Nvidia GPU
@@ -108,18 +134,17 @@ Navigate to the jellyfin directory.
 cd /docker/jellyfin/
 ```
 
-If you have not created the directory yet, do so now.
+If you have not created the jellyfin directory yet, do so now.
 ```bash
 cd /
-mkdir docker
-cd docker
-mkdir jellyfin
-cd jellyfin
+cd /docker
+mkdir /jellyfin
+cd /jellyfin
 ```
 
 Write this command to check your user_id and group_id. If it is not 1000 and 1000, then you need to write them down.
 ```bash
-
+id
 ```
 
 Write this command to check your servers ip address. Write it down.
@@ -131,7 +156,7 @@ ip a
 sudo nano compose.yaml
 ```
 
-Before pasting this. Make sure to change the PUID and PGID if your IDs were not 1000, and to change the timezone, and to fill in your ip address. 
+Before pasting this. Make sure to change the PUID and PGID if your IDs were not 1000, and to change the timezone, and to fill in your servers ip address. 
 ```bash
 services:
   jellyfin:
@@ -160,10 +185,4 @@ services:
               capabilities: [gpu]
 ```
 
-```bash
 
-```
-
-```bash
-
-```
