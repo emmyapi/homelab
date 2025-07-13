@@ -84,13 +84,16 @@ Then paste it in the file.
 # Remote Shares
 //your_media_server_ip_address_from_the_first_video/data /data cifs uid=1000,gid=1000,username=your_username,password=your_password,iocharset=utf8 0 0
 ```
+FYI nano is an editor. ^ means CTRL. It took me an embarrassingly long time to figure out because ^ is usually SHIFT, right? 
+
+Save the file with CTRL+O followed by ENTER to confirm the name. Close the file with CTRL+X. 
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
 ```bash
-
+sudo mount -a
 ```
 
 ```bash
@@ -149,9 +152,7 @@ Paste this into the new file. If there’s already other stuff in the file, just
   }
 }
 ```
-FYI: nano is an editor. ^ means your press CTRL. It took me an embarrassingly long time to figure out because ^ is usually SHIFT, right? 
-
-Save the file with CTRL+O followed by ENTER. Close the file with CTRL+X. 
+Save the file with CTRL+O followed by ENTER to confirm the name. Close the file with CTRL+X. 
 
 ```bash
 sudo systemctl restart docker
