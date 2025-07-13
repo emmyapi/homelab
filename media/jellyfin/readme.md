@@ -1,5 +1,4 @@
 # How I set up Jellyfin with hardware transcoding on Nvidia GPU
-## In my case I use a GTX 1070
 
 Step 1 is to follow this video https://www.youtube.com/watch?v=Vwtx_dfYrtA
 
