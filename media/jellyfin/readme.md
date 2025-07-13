@@ -55,7 +55,7 @@ sudo mkdir /data
 sudo mkdir /docker
 ```
 
-We will want to give our user full permnission to read and write in these two directories. 
+We will want to give our user full permission to read and write in these two directories. 
 First check what uid and gid your user is
 ```bash
 id
