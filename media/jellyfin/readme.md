@@ -222,3 +222,10 @@ Now go to your browser and put in the url
 http://your_server_ip_address:8096
 ```
 
+If it launches, then go back to the terminal and press CTRL+C to stop the service. 
+We will need to run it in detached mode. 
+```bash
+docker compose up -d
+```
+
+🚀
