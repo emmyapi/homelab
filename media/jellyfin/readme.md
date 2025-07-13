@@ -211,5 +211,14 @@ services:
               count: all
               capabilities: [gpu]
 ```
+Save the file with CTRL+O followed by ENTER to confirm the name. Close the file with CTRL+X. 
 
+```bash
+docker compose up
+```
+
+Now go to your browser and put in the url 
+```url
+http://your_server_ip_address:8096
+```
 
