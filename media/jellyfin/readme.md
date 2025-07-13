@@ -7,5 +7,7 @@ However, come here for commands. I'll explain if there is any changes to your se
 
 In you preferred terminal
 
-```ssh your_username@your_servers_ip```
+```bash
+ssh your_username@your_servers_ip
+```
 
