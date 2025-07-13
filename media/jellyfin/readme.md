@@ -96,13 +96,6 @@ sudo systemctl daemon-reload
 sudo mount -a
 ```
 
-```bash
-
-```
-
-```bash
-
-```
 
 ### This is specific to a Nvidia GPU
 
