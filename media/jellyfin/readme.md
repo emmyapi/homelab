@@ -90,32 +90,74 @@ Paste this into the new file. If there’s already other stuff in the file, just
   }
 }
 ```
-FYI: nano is an editor. ^ means your press CTRL. It took me an embarrisingly long time to figure out because ^ is usually SHIFT, right? 
+FYI: nano is an editor. ^ means your press CTRL. It took me an embarrassingly long time to figure out because ^ is usually SHIFT, right? 
 
 Save the file with CTRL+O followed by ENTER. Close the file with CTRL+X. 
 
 ```bash
-
+sudo systemctl restart docker
 ```
 
+Test your Nvidia runtime in Docker. You should see your GPU details.
+```bash
+docker run --rm --gpus all nvidia/cuda:12.0.0-base-ubuntu22.04 nvidia-smi
+```
+
+Navigate to the jellyfin directory. 
+```bash
+cd /docker/jellyfin/
+```
+
+If you have not created the directory yet, do so now.
+```bash
+cd /
+mkdir docker
+cd docker
+mkdir jellyfin
+cd jellyfin
+```
+
+Write this command to check your user_id and group_id. If it is not 1000 and 1000, then you need to write them down.
 ```bash
 
 ```
 
+Write this command to check your servers ip address. Write it down.
 ```bash
-
+ip a
 ```
 
 ```bash
-
+sudo nano compose.yaml
 ```
 
+Before pasting this. Make sure to change the PUID and PGID if your IDs were not 1000, and to change the timezone, and to fill in your ip address. 
 ```bash
-
-```
-
-```bash
-
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Copenhagen
+      - JELLYFIN_PublishedServerUrl=http://your_servers_ip_address
+    volumes:
+      - ./config:/config
+      - /data:/data
+    ports:
+      - 8096:8096
+      - 7359:7359/udp
+      - 1900:1900/udp
+    restart: unless-stopped
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 ```
 
 ```bash
