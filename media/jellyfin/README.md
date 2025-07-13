@@ -48,11 +48,11 @@ cd /
 ```
 
 ```bash
-sudo mkdir /data
+sudo mkdir data
 ```
 
 ```bash
-sudo mkdir /docker
+sudo mkdir docker
 ```
 
 We will want to give our user full permission to read and write in these two directories. 
@@ -164,9 +164,9 @@ cd /docker/jellyfin/
 If you have not created the jellyfin directory yet, do so now.
 ```bash
 cd /
-cd /docker
-mkdir /jellyfin
-cd /jellyfin
+cd docker
+mkdir jellyfin
+cd jellyfin
 ```
 
 Write this command to check your user_id and group_id. If it is not 1000 and 1000, then you need to write them down.
