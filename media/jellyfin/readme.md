@@ -71,6 +71,33 @@ sudo chown -R 1000:1000 /docker
 ```
 
 ```bash
+sudo apt install cifs-utils
+```
+
+```bash
+sudo nano /etc/fstab
+```
+
+Make sure to fill in your information, including the uid and gid if it was not 1000. 
+Then paste it in the file. 
+```bash
+# Remote Shares
+//your_media_server_ip_address_from_the_first_video/data /data cifs uid=1000,gid=1000,username=your_username,password=your_password,iocharset=utf8 0 0
+```
+
+```bash
+sudo systemctl daemon-reload
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
 
 ```
 
