@@ -55,6 +55,13 @@ sudo mkdir /data
 sudo mkdir /docker
 ```
 
+We will want to give our user full permnission to read and write in these two directories. 
+First check what uid and gid your user is
+```bash
+id
+```
+
+If it is 1000 you do not need to change anything in these commands. Otherwise change out the first 1000 with your uid, and the second 1000 with your gid
 ```bash
 sudo chown -R 1000:1000 /data
 ```
