@@ -35,6 +35,68 @@ newgrp docker
 ```
 
 ```bash
+ll /dev/dri
+```
+
+```bash
+sudo usermod -aG render your_username
+```
+
+### This is specific to a Nvidia GPU
+Check your OS and Version
+```bash
+cat /etc/os-release
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
 
 ```
 
