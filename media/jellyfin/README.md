@@ -241,7 +241,10 @@ We will need to run it in detached mode.
 docker compose up -d
 ```
 
-This command allows you to monitor the GPU usage. In Jellyfin: Dashboard → Playback → Transcoding. Then try playing a movie that needs transcoding. 
+This command allows you to monitor the GPU usage. 
+In Jellyfin: Dashboard → Playback → Transcoding. 
+Then try playing a movie that needs transcoding. 
+
 ```bash
 watch nvidia-smi
 ```
