@@ -1,5 +1,23 @@
 ## How to setup my servarr stack (using ProtonVPN with wireguard and automatic portforwarding)
 
+Navigate into docker directory
+```bash
+cd /docker
+```
+
+Create new directory 'servarr'
+```bash
+mkdir servarr
+```
+
+Navigate into servarr directory
+```bash
+cd servarr
+```
+
+nano 
+
+
 ### compose.yaml
 ```bash
 networks:
@@ -230,5 +248,37 @@ WIREGUARD_PRIVATE_KEY=your_private_key
 # OPENVPN_PASSWORD=your_protonvpn_password
 # OPENVPN_CIPHERS=AES-256-GCM
 ```
+
+In the servarr directory, run the following command
+```bash
+docker compose up -d
+```
+
+When everything is up and running, your directory should look like this:
+
+docker
+├── jellyfin
+│   ├── config
+│   └── jellyseerr
+└── servarr
+    ├── bazarr
+    ├── gluetun
+    ├── lidarr
+    ├── nzbget
+    ├── prowlarr
+    ├── qbittorrent
+    ├── radarr
+    └── sonarr
+
+Check by running the following commands
+```bash
+sudo apt install tree
+```
+
+```bash
+tree /docker -d -L 2
+```
+
+
 
 
