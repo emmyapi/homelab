@@ -193,7 +193,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Copenhagen
-      - JELLYFIN_PublishedServerUrl=http://your_servers_ip_address
+      - JELLYFIN_PublishedServerUrl=http://192.168.10.250
     volumes:
       - ./config:/config
       - /data:/data
@@ -210,6 +210,19 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+
+  jellyseerr:
+    container_name: jellyseerr
+    image: fallenbagel/jellyseerr:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Copenhagen
+    volumes:
+      - ./jellyseerr:/app/config
+    ports:
+      - 5055:5055
+    restart: unless-stopped
 ```
 Save the file with CTRL+O followed by ENTER to confirm the name. Close the file with CTRL+X. 
 
