@@ -15,7 +15,9 @@ Navigate into servarr directory
 cd servarr
 ```
 
-nano 
+```bash
+sudo nano compose.yaml
+```
 
 
 ### compose.yaml
