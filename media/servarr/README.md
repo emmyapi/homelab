@@ -257,7 +257,7 @@ docker compose up -d
 ```
 
 When everything is up and running, your directory should look like this:
-
+```bash
 docker
 ├── jellyfin
 │   ├── config
@@ -271,6 +271,7 @@ docker
     ├── qbittorrent
     ├── radarr
     └── sonarr
+```
 
 Check by running the following commands
 ```bash
