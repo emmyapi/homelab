@@ -235,3 +235,9 @@ watch nvidia-smi
 
 
 🚀
+
+
+Next steps is setting up the servarr stack
+https://github.com/emmyapi/homelab/tree/main/media/servarr
+
+
