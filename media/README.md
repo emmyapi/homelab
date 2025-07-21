@@ -6,7 +6,7 @@ Servarr-directory then builds all the services for a full Servarr setup.
 
 
 
-Maintenance: 
+### Maintenance
 
 Originally I assigned the Servarr VM too many resources. I have reduced it to only 4 GB memory and 2 cores. Originally it was 8GB/6 cores. 
 After making the change I booted the device and it couldn't find my GPU. So I re-added it, and suddenly it couldn't boot. 
