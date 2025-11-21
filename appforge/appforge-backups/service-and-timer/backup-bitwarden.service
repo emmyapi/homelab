@@ -1,0 +1,12 @@
+kenneth@appforge:~$ cat /etc/systemd/system/backup-bitwarden.service
+[Unit]
+Description=Restic backup of Bitwarden bwdata
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+ExecStart=/usr/local/bin/backup-bitwarden.sh

@@ -1,0 +1,10 @@
+kenneth@appforge:~$ cat /etc/systemd/system/backup-bitwarden.timer
+[Unit]
+Description=Restic backup of Bitwarden
+
+[Timer]
+OnCalendar=*-*-* 02:40:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
